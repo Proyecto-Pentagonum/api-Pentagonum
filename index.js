@@ -48,6 +48,4 @@ const main = ()=>{
 
 
 
-conectarDB(main)
-
-export default index;
+conectarDB(main);
