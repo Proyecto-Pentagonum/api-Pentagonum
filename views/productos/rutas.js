@@ -1,12 +1,12 @@
 import Express from 'express';
-import { queryAllProducts, crearProducto, editarProducto, consultarProducto, eliminarProducto } from '../../controllers/productos/controller.js';
+import { queryAllProducts, crearProducto, editarProducto, eliminarProducto,  consultarProducto  } from '../../controllers/productos/controller.js';
 
 const rutasProducto = Express.Router();
 
 const genericCallback = (res) => (err, result) => {
     if (err) {
         console.log('error', err);
-        res.status(500).send('Error consultando los productos');
+        res.status(500).json('Error consultando los productos');
     } else {
         res.json(result);
     }
