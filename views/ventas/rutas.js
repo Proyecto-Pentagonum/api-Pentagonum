@@ -13,15 +13,15 @@ const genericCallback = (res) => (err, result) => {
 
 rutasVenta.route('/ventas').get((req, res)=>{
     console.log ('Hicieron GET en la ruta /ventas');
-    queryAllSale(genericCallback(res));
+    queryAllSales(genericCallback(res));
 });
 
-rutasVenta.route("/ventas").post((req, res)=>{
+rutasVenta.route('/ventas').post((req, res)=>{
     crearVenta(req.body, genericCallback(res));
 });
 
 rutasVenta.route("/ventas/:id").get((req, res)=>{
-    console.log ('Hicieron GET en la ruta /ventas/:id');
+    console.log ('Hicieron GET en la ruta /ventas');
     consultarVenta(req.params.id, genericCallback(res));
 });
 
