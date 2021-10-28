@@ -8,7 +8,7 @@ import jwks from 'jwks-rsa';
 import rutasProducto from './views/productos/rutas.js';
 import rutasPersona from './views/personas/rutas.js';
 import rutasVentas from './views/ventas/rutas.js';
-//import autorizacionEstadoPersona from './middleware/autorizacionEstadoPersona.js';
+import autorizacionEstadoPersona from './middleware/autorizacionEstadoPersona.js';
 
 dotenv.config({ path: './.env' });
 
@@ -41,11 +41,13 @@ app.use(rutasPersona);
 app.use(rutasVentas);
 
 const main = ()=>{
-    return app.listen(process.env.PORT, ()=>{
-        console.log(`escuchando en el puerto ${process.env.PORT}`);
+    return app.listen(port, ()=>{
+        console.log(`escuchando en el puerto ${port}`);
     });
 };
 
 
 
 conectarDB(main)
+
+export default index;

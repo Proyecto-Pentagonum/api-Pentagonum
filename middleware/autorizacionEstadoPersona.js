@@ -6,11 +6,11 @@ const autorizacionEstadoPersona = async (req, res, next) => {
   // 1: obtener el usuario desde el token
   const token = req.headers.authorization.split('Bearer ')[1];
   const persona = jwt_decode(token)['http://localhost/userData'];
-  console.log(persona);
+  console.log(user);
 
   // 2: consultar el usuario en la BD
   const baseDeDatos = getDB();
-  await baseDeDatos.collection('personas').findOne({ email: persona.email }, async (err, response) => {
+  await baseDeDatos.collection('personas').findOne({ email: user.email }, async (err, response) => {
     if (response) {
       console.log(response);
       // 3: verificar el estado del usuario.

@@ -33,7 +33,7 @@ const consultarOCrearPersona = async (req, callback) => {
       callback(err, response);
     } else {
 
-      persona.auth0ID = user._id;
+      user.auth0ID = user._id;
       delete user._id;
       user.rol = 'sin rol';
       user.estado = 'pendiente';
