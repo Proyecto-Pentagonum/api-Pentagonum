@@ -1,5 +1,4 @@
 //const express = required ('express');
-import serverless from 'serverless-http';
 import Express from 'express';
 import Cors from 'cors';
 import dotenv from 'dotenv';
@@ -9,7 +8,7 @@ import jwks from 'jwks-rsa';
 import rutasProducto from './views/productos/rutas.js';
 import rutasPersona from './views/personas/rutas.js';
 import rutasVentas from './views/ventas/rutas.js';
-import autorizacionEstadoPersona from './middleware/autorizacionEstadoPersona.js';
+//import autorizacionEstadoPersona from './middleware/autorizacionEstadoPersona.js';
 
 dotenv.config({ path: './.env' });
 
@@ -35,7 +34,7 @@ var jwtCheck = jwt({
 // 4 y 5: enviarle el token a auth0 para que devuelva si es valido o no
 app.use(jwtCheck);
 
-app.use(autorizacionEstadoPersona);
+//app.use(autorizacionEstadoPersona);
 
 app.use(rutasProducto);
 app.use(rutasPersona);
@@ -47,10 +46,6 @@ const main = ()=>{
     });
 };
 
-const index = {
-    handler: serverless(conectarDB(main)),
-  };
 
-main();
 
-export default index;
+conectarDB(main)
