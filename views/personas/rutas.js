@@ -1,5 +1,5 @@
 import Express from 'express';
-import { queryAllPeople, crearPersona, editarPersona, consultarPersona, eliminarPersona, consultarOCrearPersona } from '../../controllers/personas/controller.js';
+import { queryAllPeople, crearPersona, editarPersona, eliminarPersona, consultarPersona,  consultarOCrearPersona } from '../../controllers/personas/controller.js';
 
 const rutasPersona = Express.Router();
 

@@ -20,7 +20,7 @@ const conectarDB = (callBack) => {
             console.error('Error al conectar');
             return 'error';
         } 
-        baseDeDatos = db.db('pentagonumDB');
+        baseDeDatos = db.db('ProyectoPentagonum');
         console.log('conectado a la base de datos');
         return callBack();
     });
